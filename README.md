@@ -13,11 +13,11 @@ It is recommended to run a basic trufflehog scan on your entire repository prior
 
 workflow "Detect Secrets" {
   on = "push"
-  resolves = ["edplato/trufflehog-actions-scan"]
+  resolves = ["nasa-gibs/trufflehog-actions-scan"]
 }
 
-action "edplato/trufflehog-actions-scan" {
-  uses = "edplato/trufflehog-actions-scan@master"
+action "nasa-gibs/trufflehog-actions-scan" {
+  uses = "nasa-gibs/trufflehog-actions-scan@master"
 }
 
 ```
@@ -38,7 +38,7 @@ Edit your corresponding actions `yml` file or create a new one.
 steps:
 - uses: actions/checkout@master
 - name: trufflehog-actions-scan
-    uses: edplato/trufflehog-actions-scan@master
+    uses: nasa-gibs/trufflehog-actions-scan@master
 ```
 
 ### Custom Arguments
@@ -47,7 +47,7 @@ steps:
 steps:
 - uses: actions/checkout@master
 - name: trufflehog-actions-scan
-  uses: edplato/trufflehog-actions-scan@master
+  uses: nasa-gibs/trufflehog-actions-scan@master
   with:
     scanArguments: "--regex --entropy=False --max_depth=5" # Add custom options here*
 
@@ -64,7 +64,7 @@ You can't use the default `GITHUB_TOKEN` as it doesn't have the permission to cl
 steps:
 - uses: actions/checkout@master
 - name: trufflehog-actions-scan
-  uses: edplato/trufflehog-actions-scan@master
+  uses: nasa-gibs/trufflehog-actions-scan@master
   with:
     githubToken: ${{ secrets.GITHUB_CLONE_TOKEN }} # You have to create an access token manually
 
