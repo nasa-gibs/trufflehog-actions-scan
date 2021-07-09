@@ -55,20 +55,6 @@ steps:
 
 *if custom options argument string is used, it will overwrite default settings
 
-### Private GitHub Repository
-
-Pass a GitHub access token to action to clone from a private GitHub repository.
-You can't use the default `GITHUB_TOKEN` as it doesn't have the permission to clone the repository.
-
-```yaml
-steps:
-- uses: actions/checkout@master
-- name: trufflehog-actions-scan
-  uses: nasa-gibs/trufflehog-actions-scan@master
-  with:
-    githubToken: ${{ secrets.GITHUB_CLONE_TOKEN }} # You have to create an access token manually
-
-```
 
 ----
 
