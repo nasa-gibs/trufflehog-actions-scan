@@ -7,6 +7,4 @@ if [ -n "${INPUT_SCANARGUMENTS}" ]; then
   args="${INPUT_SCANARGUMENTS}" # Overwrite if new options string is provided
 fi
 
-githubRepo="https://github.com/$GITHUB_REPOSITORY" # Overwrite for private repository if token provided
-
 trufflehog file:///github/workspace $args 
